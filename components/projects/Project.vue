@@ -11,7 +11,7 @@
 
       <div class="item__time">
         <div class="time__item">
-          time this week
+          last 30 days
           <span>{{ time.last_30_days_spent_sec}}</span>
         </div>
         <div class="time__item">

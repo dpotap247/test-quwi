@@ -61,6 +61,7 @@ export default {
           const {
             data: { project },
           } = await this.$axios.post(`/projects-manage/update?id=${this.data.id}`, payload)
+          
           if (project) {
             this.$emit('updated', { name: project.name })
           }
