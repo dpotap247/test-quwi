@@ -11,6 +11,10 @@ export default {
   components: {
     Header,
   },
+  mounted() {
+    const isAuthorized = !!this.$cookies.get('token')
+    this.$store.commit('updateAuthorized', isAuthorized)
+  },
 }
 </script>
 
@@ -28,7 +32,7 @@ body {
   width: 100%;
   height: 100vh;
   font-size: 14px;
-  background: #F5F4F3;
+  background: #f5f4f3;
 }
 .page {
   padding: 20px;

@@ -11,6 +11,10 @@ export default {
   components: {
     Form,
   },
+  mounted() {
+    this.$cookies.remove('token')
+    this.$store.commit('updateAuthorized', false)
+  },
   methods: {
     async login(payload) {
       try {
@@ -19,13 +23,13 @@ export default {
         } = await this.$axios.post('auth/login', payload)
 
         if (token) {
-          localStorage.setItem('token', token)
+          this.$cookies.set('token', 'token')
+          this.$store.commit('updateAuthorized', !!token)
           this.$router.push('/')
         }
       } catch (err) {
         console.log(err)
       }
-      
       this.$refs.form.isLoading = false
     },
   },

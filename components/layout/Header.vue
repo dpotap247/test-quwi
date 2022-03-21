@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <img class="header__logo" width="30" height="30" src="https://api.quwi.com/images/logo_150.png" />
-    <div class="header__links">
+    <div class="header__links" v-if="links && links.length">
       <Link class="header__link" type="primary" :data="item" v-for="(item, index) in links" :key="index" />
     </div>
   </div>
@@ -14,9 +14,20 @@ export default {
   components: {
     Link,
   },
-  data() {
-    return {
-      links: [
+  computed: {
+    isAuthorized() {
+      return this.$store.state.isAuthorized
+    },
+    links() {
+      if (!this.isAuthorized) {
+        return [
+          {
+            text: 'Login',
+            href: '/login',
+          },
+        ]
+      }
+      return [
         {
           text: 'Projects',
           href: '/',
@@ -25,8 +36,8 @@ export default {
           text: 'Logout',
           href: '/login',
         },
-      ],
-    }
+      ]
+    },
   },
 }
 </script>
