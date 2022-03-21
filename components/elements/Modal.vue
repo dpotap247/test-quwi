@@ -1,5 +1,5 @@
 <template>
-  <div class="modal-wrapper" v-show="show">
+  <div class="modal-wrapper" v-show="isShow">
     <div class="modal">
       <svg
         class="modal__btn_close"
@@ -20,11 +20,10 @@
 //
 export default {
   props: {
-    show: {
+    isShow: {
       type: Boolean,
     },
   },
-  setup() {},
 }
 </script>
 

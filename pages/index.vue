@@ -81,17 +81,10 @@ export default {
       this.selectedProject = null
     },
   },
-  // setup() {
-
-  // },
 }
 </script>
 
 <style scoped lang="scss">
-// .page {
-//   width: 100%;
-//   align-items: ;
-// }
 .projects {
   height: 100%;
   width: 506px;

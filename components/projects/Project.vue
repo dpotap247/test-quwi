@@ -74,7 +74,7 @@ export default {
           data: {
             task: { all_time_spent_sec, last_30_days_spent_sec, this_month_spent_sec },
           },
-        } = await this.$axios.get('/stats-bugtracker/issues-bugs-times', params)
+        } = await this.$axios.get('/stats-bugtracker/issues-bugs-times', { params })
 
         this.time.all_time_spent_sec = this.formatDate(all_time_spent_sec)
         this.time.last_30_days_spent_sec = this.formatDate(last_30_days_spent_sec)
