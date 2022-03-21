@@ -1,4 +1,4 @@
-import { validationText } from '@/store/constant'
+import { validationText, ruleRegExpes } from '@/store/constant'
 
 export default {
   data() {
@@ -19,7 +19,7 @@ export default {
       this.untouched = false
       if (this.parsedRules.length) {
         this.parsedRules.forEach((rule) => {
-           this.checkValidInput(rule)
+          this.checkValidInput(rule)
         })
       }
     },
@@ -47,7 +47,7 @@ export default {
           break
         }
         case 'email': {
-          if (this.value.length < 5 || !this.value.includes('@') || !this.value.includes('.')) {
+          if (!this.value.match(ruleRegExpes.email)) {
             error = true
           }
           break

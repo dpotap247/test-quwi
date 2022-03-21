@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :class="[linkClasses]" :to="data.href">{{ data.text }}</nuxt-link>
+  <nuxt-link class="link" :class="[linkClasses]" :to="data.href">{{ data.text }}</nuxt-link>
 </template>
 
 <script>
@@ -16,8 +16,8 @@ export default {
   },
   computed: {
     linkClasses() {
-      if (type === 'primary') {
-        return 'underline'
+      if (this.type === 'primary') {
+        return 'uppercase'
       }
       return ''
     },
@@ -26,7 +26,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.underline {
-  text-transform: underline;
+.uppercase {
+  text-transform: uppercase;
+}
+.link {
+  text-decoration: none;
+  color: #777A84;
 }
 </style>

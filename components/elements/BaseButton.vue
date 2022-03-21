@@ -1,14 +1,23 @@
 <template>
-  <button class="btn" :class="[`btn_${type}`]"><slot /></button>
+  <button class="btn" :class="[`btn_${type}`]">
+    <Spinner v-if="isLoading" />
+    <slot v-else />
+  </button>
 </template>
 
 <script>
+import Spinner from '@/components/elements/Spinner.vue'
+
 export default {
   props: {
     type: {
       type: String,
       default: 'default',
     },
+    isLoading: Boolean,
+  },
+  components: {
+    Spinner,
   },
 }
 </script>
@@ -17,14 +26,15 @@ export default {
 .btn {
   border: none;
   box-shadow: none;
-  padding: 16px 40px;
+  padding: 0 40px;
+  height: 48px;
+  min-width: 120px;
   text-transform: uppercase;
   border-radius: 4px;
-  font-size: 14px;
   cursor: pointer;
   &_primary {
-      background: #3F5275;
-      color: #fff;
+    background: #3f5275;
+    color: #fff;
   }
 }
 </style>

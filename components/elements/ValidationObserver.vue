@@ -6,8 +6,17 @@
 
 <script>
 export default {
+  data() {
+    return {
+      isValidationVisible: false,
+    }
+  },
   methods: {
     isValid() {
+      if(this.isValidationVisible) {
+        return
+      }
+
       let isValid = true
       this.$children.forEach((input) => {
         input.showValidation()
@@ -15,10 +24,18 @@ export default {
           isValid = false
         }
       })
+      setTimeout(() => {
+        if (this.isValidationVisible) {
+          this.hiddenValidation()
+        }
+      }, 3000)
+
+      this.isValidationVisible = !isValid
       return isValid
     },
     hiddenValidation() {
-      this.$childer.forEach((input) => {
+      this.isValidationVisible = false
+      this.$children.forEach((input) => {
         input.hiddenValidation()
       })
     },

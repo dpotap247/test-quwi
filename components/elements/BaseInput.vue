@@ -8,6 +8,7 @@
       :type="type"
       :placeholder="placeholder"
       :value="value"
+      :readonly="readonly"
       @input="$emit('input', $event.target.value)"
       @blur="showValidation"
       @focus="hiddenValidation"
@@ -24,6 +25,7 @@ export default {
     placeholder: String,
     rules: String,
     value: String,
+    readonly: Boolean,
     type: {
       type: String,
       default: 'text',
@@ -36,12 +38,14 @@ export default {
 <style scoped lang="scss">
 .base-input {
   width: 100%;
+  text-align: left;
   &__label {
     margin-bottom: 3px;
   }
   &__error {
     margin-top: 3px;
     color: red;
+    font-size: 12px;
   }
   &__input {
     width: 100%;
