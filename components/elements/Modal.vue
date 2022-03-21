@@ -38,7 +38,6 @@ export default {
   width: 550px;
   //   height: 100%;
   text-align: center;
-  font-size: 1.2rem;
   border-radius: 4px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   animation: modal 0.5s;
