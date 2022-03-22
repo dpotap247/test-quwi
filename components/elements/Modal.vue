@@ -44,8 +44,8 @@ export default {
     &_close {
       cursor: pointer;
       position: absolute;
-      right: 16px;
-      top: 16px;
+      right: 20px;
+      top: 20px;
       width: 16px;
       height: 16px;
     }
