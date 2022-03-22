@@ -56,7 +56,7 @@ export default {
       try {
         const {
           data: { projects },
-        } = await this.$axios.get('projects-manage/index', params)
+        } = await this.$axios.get('projects-manage/index', { params })
 
         this.projects = projects
       } catch (err) {
