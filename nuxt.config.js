@@ -27,17 +27,18 @@ export default {
   buildModules: ['@nuxtjs/style-resources'],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/axios', 'cookie-universal-nuxt'],
-
-  styleResources: {
-    scss: ['~/assets/scss/global.scss'],
-  },
+  modules: ['@nuxtjs/axios', 'cookie-universal-nuxt', '@nuxtjs/toast'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 
   axios: {
     baseURL: 'http://localhost:4000',
+  },
+
+  toast: {
+    position: 'top-right',
+    duration: 3000,
   },
 
   publicRuntimeConfig: {

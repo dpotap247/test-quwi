@@ -44,4 +44,8 @@ body {
   align-items: center;
   overflow: auto;
 }
+.toasted-container.top-right {
+  top: 48px!important;
+  right: 16px!important;
+}
 </style>
