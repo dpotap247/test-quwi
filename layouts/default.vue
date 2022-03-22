@@ -11,7 +11,7 @@ export default {
   components: {
     Header,
   },
-  mounted() {
+  created() {
     const isAuthorized = !!this.$cookies.get('token')
     this.$store.commit('updateAuthorized', isAuthorized)
   },

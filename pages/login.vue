@@ -11,7 +11,7 @@ export default {
   components: {
     Form,
   },
-  mounted() {
+  created() {
     this.logout()
   },
   methods: {
