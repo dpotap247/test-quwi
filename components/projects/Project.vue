@@ -107,6 +107,9 @@ export default {
   }
   &__name {
     font-weight: 600;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   &__logo {
     width: 34px;
