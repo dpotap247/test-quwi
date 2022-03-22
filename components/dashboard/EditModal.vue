@@ -61,7 +61,7 @@ export default {
           const {
             data: { project },
           } = await this.$axios.post(`/projects-manage/update?id=${this.data.id}`, payload)
-          
+
           if (project) {
             this.$emit('updated', { name: project.name })
           }
@@ -83,7 +83,7 @@ export default {
   &__logo {
     border-radius: 50%;
     width: 100px;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   }
   &__input {
     margin-top: 15px;
