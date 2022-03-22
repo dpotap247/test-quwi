@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div>
     <div class="projects">
       <Project
         :data="item"

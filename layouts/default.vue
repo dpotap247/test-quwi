@@ -33,6 +33,7 @@ body {
   height: 100vh;
   font-size: 14px;
   background: #f5f4f3;
+  padding-bottom: 20px;
 }
 .page {
   padding: 20px;
@@ -41,5 +42,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: auto;
 }
 </style>
