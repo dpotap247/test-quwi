@@ -1,5 +1,5 @@
 <template>
-  <Modal :isShow="value" @input="$emit('input', $event)">
+  <Modal :isShow="value" @input="$emit('input', $event)" @close="$emit('close')">
     <div v-if="data">
       <img class="edit__logo" :src="data.logo_url" />
       <ValidationObserver ref="formValidationObserver">

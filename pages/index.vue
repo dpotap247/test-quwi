@@ -14,6 +14,7 @@
       v-model="isShowEditModal"
       v-if="selectedProject"
       @updated="updateItem"
+      @close="selectedProject = null"
     />
   </div>
 </template>

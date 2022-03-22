@@ -6,7 +6,7 @@
         viewPort="0 0 12 12"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
-        @click="$emit('input', false)"
+        @click="$emit('input', false), $emit('close')"
       >
         <line x1="1" y1="16" x2="16" y2="1" stroke="black" stroke-width="2" />
         <line x1="1" y1="1" x2="16" y2="16" stroke="black" stroke-width="2" />
