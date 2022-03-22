@@ -12,8 +12,7 @@ export default {
     Form,
   },
   mounted() {
-    this.$cookies.remove('token')
-    this.$store.commit('updateAuthorized', false)
+    this.logout()
   },
   methods: {
     async login(payload) {
@@ -31,6 +30,12 @@ export default {
         console.log(err)
       }
       this.$refs.form.isLoading = false
+    },
+    logout() {
+      if (this.$cookies.get('token')) {
+        this.$cookies.remove('token')
+        this.$store.commit('updateAuthorized', false)
+      }
     },
   },
 }
