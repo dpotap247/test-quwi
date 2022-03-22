@@ -1,7 +1,7 @@
-export default function ({ store, app: { $axios }, redirect }) {
+export default function ({ store, app: { $axios, $cookies }, redirect }) {
   $axios.onRequest((config) => {
     if (process.client) {
-      const token = localStorage.getItem('token')
+      const token = $cookies.get('token')
       if (token) {
         config.headers.Authorization = `Bearer ${token}`
       }

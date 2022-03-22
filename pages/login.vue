@@ -22,7 +22,7 @@ export default {
         } = await this.$axios.post('auth/login', payload)
 
         if (token) {
-          this.$cookies.set('token', 'token')
+          this.$cookies.set('token', token)
           this.$store.commit('updateAuthorized', !!token)
           this.$router.push('/')
         }
